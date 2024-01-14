@@ -41,12 +41,13 @@ ol {
 }
 
 .content {
+  height: 100vh;
   margin: auto;
-  padding: 133px 30px;
   display: flex;
   align-items: end;
   align-self: center;
   gap: 30px;
+  max-width: 1140px;
 }
 
 .result {
@@ -60,7 +61,6 @@ ol {
 .result__video-container {
   display: flex;
   position: relative;
-  overflow: hidden;
   width: 711px;
   height: 386px;
 }
@@ -75,6 +75,7 @@ ol {
   display: flex;
   justify-content: space-between;
   align-items: end;
+  gap: 5px;
 }
 
 .search-form__fieldset {
@@ -89,7 +90,9 @@ ol {
   gap: 15px;
   justify-content: center;
   align-items: start;
+  padding-bottom: 5px;
 }
+
 .search-form__label {
   max-width: 225px;
   display: flex;
@@ -101,9 +104,10 @@ ol {
 .search-form__label:hover .search-form__label-text {
   text-decoration: underline;
 }
+
 .search-form__label-text {
+  gap: 5px;
   padding-left: 5px;
-  padding-bottom: 5px;
   font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
   line-height: 21.6px;
@@ -116,28 +120,25 @@ ol {
   min-width: 225px;
   width: fit-content;
   border: none;
+  color: white;
   border-top: 1px solid white;
   border-bottom: 1px solid white;
   background-color: transparent;
   font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
-  line-height: 21.6px;
+  line-height: 22.6px;
   appearance: none;
 }
 
-.search-form__textfield:hover {
-  outline: none;
-}
 .search-form__textfield:active {
   border-left: 1px solid white;
   border-right: 1px solid white;
 }
+
 .search-form__textfield:focus {
   outline: none;
 }
-.search-form_label:focus {
-  outline: none;
-}
+
 .search-form__label:has(:focus-visible) {
   outline: 1px solid white;
   outline-offset: 2px;
@@ -173,7 +174,7 @@ ol {
 }
 
 .button {
-  height: 34px;
+  min-height: 34px;
   border: 1px solid white;
   color: #fff;
   font-family: "Fira Sans Condensed", sans-serif;
@@ -191,25 +192,29 @@ ol {
 
 .button:focus-visible {
   outline: 1px solid white;
-  outline-offset: 2px;
+  outline-offset: -2px;
 }
 
 .button:hover {
   text-decoration: underline;
 }
+
 .button:active {
   background-color: #545050;
 }
+
 .search-form__submit-button {
   width: 194px;
 }
+
 .content__details {
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
-  min-width: 399px;
-  gap: 22px;
+  justify-content: end;
+  align-self: center;
+  gap: 24px;
 }
 
 .title {
@@ -224,21 +229,22 @@ ol {
 .content__accent {
   color: #545050;
 }
+
 .content__list {
   position: relative;
-  display: flex;
-  flex-direction: column;
   width: 100%;
+  height: 100%;
   max-height: 298px;
-  max-width: 399px;
+  min-width: 399px;
   overflow: auto;
 }
 
 .content__list-item {
   padding-bottom: 32px;
 }
+
 .content__list-item:last-child {
-  padding-bottom: 0px;
+  padding-bottom: 0;
 }
 
 .content__video-card {
@@ -250,16 +256,18 @@ ol {
 .content__card-link:focus {
   outline: none;
 }
+
 .content__card-link:focus-visible {
   outline: 1px solid white;
   outline-offset: 2px;
 }
+
 .content__video-card-thumbnail {
   max-width: 194px;
   max-height: 103px;
   object-fit: cover;
   display: flex;
-  justify-content: flex-end;
+  justify-content: end;
   object-position: center;
 }
 
@@ -268,16 +276,8 @@ ol {
   height: 100%;
 }
 
-.content__video-card-description-container {
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  max-width: 200px;
-}
-
 .more-button {
   width: 100%;
-  cursor: pointer;
 }
 
 .content__card-link {
@@ -287,18 +287,23 @@ ol {
   margin: 2px;
 }
 
+.content__card-link_current:hover {
+  background-color: #545050;
+}
+
 .content__video-card-title {
+  max-width: 200px;
   font-family: Oswald, sans-serif;
   font-size: 30px;
   line-height: 30px;
-  line-height: 1;
   text-transform: uppercase;
   font-weight: 700;
   line-height: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
-.content__video-card:hover {
-  content: "";
+.content__card-link:hover {
   position: relative;
   text-decoration: underline;
   text-decoration-thickness: 1px;
@@ -307,14 +312,6 @@ ol {
 
 .content__card-link:active {
   background-color: #545050;
-}
-
-.content__card-link:focus {
-  outline: none;
-}
-.content__card-link:focus-visible {
-  outline: 1px solid white;
-  outline-offset: 2px;
 }
 
 .visually-hidden {
